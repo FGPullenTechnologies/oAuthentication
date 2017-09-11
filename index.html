@@ -247,7 +247,7 @@ var lpGetAuthenticationToken = function(callback) {
 };
 	
 	
-$("#CustomerID").on("input", function() {
+$("#sub").on("input", function() {
 	if ($("#CustomerID").val() != "") {
             document.getElementById("sendStat").innerHTML = "Ready to oAuthenticate";
             document.getElementById("sendStat").style = "color : green";
@@ -262,58 +262,57 @@ $("#CustomerID").on("input", function() {
 	
 function sendData() {
 	
-firstgreenlight = 1;
-secondgreenlight = 1;
-thirdgreenlight = 1;
+
 	
-if (($("#CustomerID").val() != "") && firstgreenlight) {
+  if (($("#sub").val() != "")) {
+	
+	sub = $("#sub").val();
+	cstatus = $("#sub").val();
+	ctype = $("#sub").val();
+	customerID = $("#sub").val();
+	balance = $("#sub").val();
+	socialId = $("#sub").val();
+	imei = $("#sub").val();
+	userName = $("#sub").val();
+	companySize = $("#sub").val();
+	accountName = $("#sub").val();
+	role = $("#sub").val();
+	lastPaymentDateDay = $("#sub").val();
+	lastPaymentDateMonth = $("#sub").val();
+	lastPaymentDateYear = $("#sub").val();
+	registrationDateDay = $("#sub").val();
+	registrationDateMonth = $("#sub").val();
+	registrationDateYear = $("#sub").val();
+	firstname = $("#sub").val();
+	lastname = $("#sub").val();
+	visitorAgeAge = $("#sub").val();
+	visitorAgeAgeYear = $("#sub").val();
+	visitorAgeAgeMonth = $("#sub").val();
+	visitorAgeAgeDay = $("#sub").val();
+	email = $("#sub").val();
+	phone = $("#sub").val();
+	gender = $("#sub").val();
+	company = $("#sub").val();
+	expiresIn = $("#sub").val();
+	
+	
+	
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("readystatechange", function () {
+          if (this.readyState === 4) {
+            var jsonResult = JSON.parse(this.responseText);
+            console.log(jsonResult.result);
+          }
+        });
+        var URLforGET = "http://localhost:10081/add?sub="+sub+"&cstatus="+cstatus;
+        xhr.open("GET", URLforGET);
+        xhr.send();
     
-    firstgreenlight = 0;
-    var URL = "https://lpscdemo.eu.auth0.com/oauth/token";
-    document.getElementById("sendStat").innerHTML = "";
-    CustomerID = document.getElementById("CustomerID").value;
-    var request = new XMLHttpRequest();
-    request.open('POST', URL, true);
- 
-   
-    request.setRequestHeader("content-type", "application/json");
-    request.setRequestHeader("accept", "application/json");
-	
-	
-    request.send(JSON.stringify({ "grant_type": "client_credentials",
-     "client_id": client_id,
-     "client_secret": client_secret,
-     "audience": "https://lpscdemo.eu.auth0.com/api/v2/"
-    }));
-    console.log("Posting (1)...");
-    request.onreadystatechange = function () {
-      if (this.readyState == 4 && this.status == 400){
-        document.getElementById("sendStat").innerHTML = "Error getting Bearer";
-        document.getElementById("sendStat").style = "color : red";
-      }
-      else{
-	      
-	document.getElementById("sendStat").innerHTML = "...retrieving the Bearer...";
-        document.getElementById("sendStat").style = "color : blue";
-	function ahead(){
-		
-	  Bearer = (JSON.parse(request.responseText)).access_token;
-          document.getElementById("sendStat").innerHTML = "We got a Bearer! Now let me check if this user exists...";
-          document.getElementById("sendStat").style = "color : green";
-	  greenlight = 1;
-	  console.log(Bearer); 
-	  return checkuser();
-		
-         }setTimeout(ahead, 2000);
-	
-	
-      }
-    };
-}
-else{
-    document.getElementById("sendStat").innerHTML = "Insert the ID!";
-    document.getElementById("sendStat").style = "color : red";
-}
+  }
+  else{
+      document.getElementById("sendStat").innerHTML = "Insert the ID!";
+      document.getElementById("sendStat").style = "color : red";
+  }
 	
 };	
 	
