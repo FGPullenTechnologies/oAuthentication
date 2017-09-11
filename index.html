@@ -104,7 +104,7 @@ font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","
 
 <div id="title">oAuthentication Tester</div><br>
 <div id="text">Customer ID (not email format):</div>
-<input id="CustomerID" float="left" size="30" type="input"><br>
+<input id="sub" float="left" size="30" type="input"><br>
 
 <div id="text">cstatus:</div>
 <input id="cstatus" float="left" size="10" type="input"><br>
@@ -180,6 +180,9 @@ font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","
 <div id="text">company:</div>
 <input id="company" float="left" size="10" type="input"><br>
 	
+<div id="text">expiresIn:</div>
+<input id="expiresIn" float="left" size="10" type="input"><br>
+	
 <br><br>
 
 
@@ -198,19 +201,39 @@ font-family: "Myriad pro","Trebuchet MS","Lucida Grande","Lucida Sans Unicode","
     
 	
 <script>
-var client_id  = "ZIwHOueH2DE7b0oOE7JSgGpJGfEqwC8u";
-var client_secret = "ZoAfkxVlYE8bStPMm6QPkWvQHdfDM87U3Fd5t60FkbQjng33OZ2GQNAUfou4hEl5";
-var Bearer = "string";
-var CustomerID = "string";
-var firstgreenlight = 0;
-var greenlight = 0;
-var secondgreenlight = 1;
-var thirdgreenlight = 1;
-var Token = "string";
-var tokenStored = "string";
-var token2 = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NvbWV0aGluZy5pdCIsInN1YiI6IjQyNTU1NTEyMTIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJKb2huRG9lIiwicGhvbmVfbnVtYmVyIjoiKzEtMTAtMzQ0LTM3NjUzMzMiLCJnaXZlbl9uYW1lIjoiVGVzdCIsImZhbWlseV9uYW1lIjoiVGVzdDIiLCJlbWFpbCI6ImVtYWlsQGVtYWlsLmNvbSIsImdlbmRlciI6Ik1hbGUiLCJscF9zZGVzIjpbeyJ0eXBlIjoiY3RtcmluZm8iLCJpbmZvIjp7ImNzdGF0dXMiOiJjYW5jZWxsZWQiLCJjdHlwZSI6InZpcCIsImN1c3RvbWVySWQiOiIxMzg3NjZBQyIsImJhbGFuY2UiOi00MDAuOTksInNvY2lhbElkIjoiMTEyNTYzMjQ3ODAiLCJpbWVpIjoiMzU0MzU0NjU0MzU0NTY4OCIsInVzZXJOYW1lIjoidXNlcjAwMCIsImNvbXBhbnlTaXplIjo1MDAsImFjY291bnROYW1lIjoiYmFuayBjb3JwIiwicm9sZSI6ImJyb2tlciIsImxhc3RQYXltZW50RGF0ZSI6eyJkYXkiOjE1LCJtb250aCI6MTAsInllYXIiOjIwMTR9LCJyZWdpc3RyYXRpb25EYXRlIjp7ImRheSI6MjMsIm1vbnRoIjo1LCJ5ZWFyIjoyMDEzfX19LHsidHlwZSI6InBlcnNvbmFsIiwicGVyc29uYWwiOnsiZmlyc3RuYW1lIjoiSm9obiIsImxhc3RuYW1lIjoiRG9lIiwiYWdlIjp7ImFnZSI6MzQsInllYXIiOjE5ODAsIm1vbnRoIjo0LCJkYXkiOjE1fSwiY29udGFjdHMiOlt7ImVtYWlsIjoibXluYW1lQGV4YW1wbGUuY29tIiwicGhvbmUiOiIrMSAyMTItNzg4LTg4NzcifV0sImdlbmRlciI6Ik1BTEUiLCJjb21wYW55IjoiY29tcGFueSJ9fV0sImlhdCI6MTUwNTA4NTYxMCwiZXhwIjoxNTA1MDg1NzkwfQ.SszlY4zwzCBZNjE7SMNwSn9ox-_5V_uudZNec3UpkTilrOQ0viJ5AAWTE2I86bkhwc6bc-F6RNNt7X8_ItLY3L0qOSIzCKyl7CpFajMc1NqLikzq6mdHRiO-j-JBhCvwN3Ap8hy6c1p1W5J-OMD0QGOw05lzfYOwwf-pG84fHyVD2h5-v967hbOF9UEUH9IvGV49e8zb4yQ__ZWfWgjpft1KX_5CO8xOUyLqF4rXIB2kgXCZgtU0Gd8SKpGOSF7AQn4J5j0AkCOosLP8fHtUYVrSFLHuBVg2jywpHvoR9p8tbQ43lwwLXIKZ5BF8hYcr14qIkqcK6r3ug5T55VPa4g";
+
+var sub = "";
+var cstatus = "";
+var ctype = "";
+var customerID = "";
+var balance = "";
+var socialId = "";
+var imei = "";
+var userName = "";
+var companySize = "";
+var accountName = "";
+var role = "";
+var lastPaymentDateDay = "";
+var lastPaymentDateMonth = "";
+var lastPaymentDateYear = "";
+var registrationDateDay = "";
+var registrationDateMonth = "";
+var registrationDateYear = "";
+var firstname = "";
+var lastname = "";
+var visitorAgeAge = "";
+var visitorAgeAgeYear = "";
+var visitorAgeAgeMonth = "";
+var visitorAgeAgeDay = "";
+var email = "";
+var phone = "";
+var gender = "";
+var company = "";
+var expiresIn = "";
 	
-var token3 = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL3NvbWV0aGluZy5pdCIsInN1YiI6IjQyNTU1NTEyMTIiLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJKb2huRG9lIiwicGhvbmVfbnVtYmVyIjoiKzEtMTAtMzQ0LTM3NjUzMzMiLCJnaXZlbl9uYW1lIjoiVGVzdCIsImZhbWlseV9uYW1lIjoiVGVzdDIiLCJlbWFpbCI6ImVtYWlsQGVtYWlsLmNvbSIsImdlbmRlciI6Ik1hbGUiLCJscF9zZGVzIjpbeyJ0eXBlIjoiY3RtcmluZm8iLCJpbmZvIjp7ImNzdGF0dXMiOiJjYW5jZWxsZWQiLCJjdHlwZSI6InZpcCIsImN1c3RvbWVySWQiOiIxMzg3NjZBQyIsImJhbGFuY2UiOi00MDAuOTksInNvY2lhbElkIjoiMTEyNTYzMjQ3ODAiLCJpbWVpIjoiMzU0MzU0NjU0MzU0NTY4OCIsInVzZXJOYW1lIjoidXNlcjAwMCIsImNvbXBhbnlTaXplIjo1MDAsImFjY291bnROYW1lIjoiYmFuayBjb3JwIiwicm9sZSI6ImJyb2tlciIsImxhc3RQYXltZW50RGF0ZSI6eyJkYXkiOjE1LCJtb250aCI6MTAsInllYXIiOjIwMTR9LCJyZWdpc3RyYXRpb25EYXRlIjp7ImRheSI6MjMsIm1vbnRoIjo1LCJ5ZWFyIjoyMDEzfX19LHsidHlwZSI6InBlcnNvbmFsIiwicGVyc29uYWwiOnsiZmlyc3RuYW1lIjoiTWFyY28iLCJsYXN0bmFtZSI6IkRhZ29saW5pIiwiYWdlIjp7ImFnZSI6MzQsInllYXIiOjE5ODAsIm1vbnRoIjo0LCJkYXkiOjE1fSwiY29udGFjdHMiOlt7ImVtYWlsIjoibXluYW1lQGV4YW1wbGUuY29tIiwicGhvbmUiOiIrMSAyMTItNzg4LTg4NzcifV0sImdlbmRlciI6Ik1BTEUiLCJjb21wYW55IjoiY29tcGFueSJ9fV0sImlhdCI6MTUwNTA4NTMxNywiZXhwIjoxNTk5NzU4MTE3fQ.eUbsuyRroAuVbpp3GZvK9rTJk_1ao44crjxc5TUdiP0Mh9yhzSlplBsI8n9s2DfL140CLIIUczUovOvJ2rXw1tk9kZSrVRIWcytU_-07pDb5_u0uVljaqOHKsxCvdzwXwYABGJ__Z9rDBdGSKFDEd2v535_zCf_-MISflnwB48W3WjCSboJ1k22qt9ayP-TRQbEghBA4Bf1svOZ__X7DdfOKWaFfFMczQe5yLIbsecIPEuN7sE8s0XA68w58BBG_hZggVSS8Gy02e4cV167UN_Pkd1pHPcuZg9OBQ5nWqtxk5G2f9KeI3qvd0ZiyLTgFT0IFx2Y6WMnDKRdPgBh8NQ";
+	
+	
+	
 	
 	
 lpTag.sdes = lpTag.sdes||[];
